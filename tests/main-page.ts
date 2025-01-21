@@ -9,7 +9,7 @@ export class MainPage {
     }
 
     async waitUntilContentLoaded() {
-        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('domcontentloaded');
         await this.page.waitForSelector('[data-testid="card-container"]', {state: 'visible', timeout: 10_000});
     }
 

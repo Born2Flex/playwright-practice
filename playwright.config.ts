@@ -12,6 +12,7 @@ export default defineConfig({
     use: {
         baseURL: 'https://www.airbnb.com',
         trace: 'on-first-retry',
+        video: 'on'
     },
 
     projects: [

@@ -42,6 +42,7 @@ test('Search for a week trip in Croatia for 2 adults', async ({page, mainPage}) 
 test('Search for a week trip to Lisbon for 2 adults using POM', async ({page, mainPage}) => {
     await mainPage.goToOneWeekLisbonTripResults();
     await mainPage.waitUntilContentLoaded();
+    expect(await page.getByTestId('card-container').count()).toBeGreaterThan(0);
     await page.getByTestId('card-container').first().click();
     const popupPage = await page.waitForEvent('popup');
     await popupPage.getByLabel('Close').click();
