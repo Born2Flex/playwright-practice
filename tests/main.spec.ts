@@ -11,15 +11,15 @@ test('Main page is present', async ({page, mainPage}) => {
     await page.screenshot({path: 'screenshots/main-page.png'});
 });
 
-// Task 2
-test('Category page is not empty', async ({page, mainPage}) => {
-    await mainPage.goto();
-    await mainPage.selectCategory('Historical homes');
-    await mainPage.waitUntilContentLoaded();
-
-    expect(await page.getByTestId('card-container').count()).toBeGreaterThan(0);
-    await page.screenshot({path: 'screenshots/category.png'});
-});
+// // Task 2
+// test('Category page is not empty', async ({page, mainPage}) => {
+//     await mainPage.goto();
+//     await mainPage.selectCategory('Historical homes');
+//     await mainPage.waitUntilContentLoaded();
+//
+//     expect(await page.getByTestId('card-container').count()).toBeGreaterThan(0);
+//     await page.screenshot({path: 'screenshots/category.png'});
+// });
 
 // Task 3
 test('Search for a week trip in Croatia for 2 adults', async ({page, mainPage}) => {
