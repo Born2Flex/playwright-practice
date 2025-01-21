@@ -1,16 +1,16 @@
-import { test as base } from '@playwright/test';
-import { MainPage } from './main-page';
+import {test as base} from '@playwright/test';
+import {MainPage} from './main-page';
 
 type Fixtures = {
     mainPage: MainPage;
 };
 
 export const test = base.extend<Fixtures>({
-    mainPage: async ({ page }, use) => {
+    mainPage: async ({page}, use) => {
         const mainPage = new MainPage(page);
         await mainPage.goto();
         await use(mainPage);
     }
 })
 
-export { expect } from '@playwright/test';
+export {expect} from '@playwright/test';
